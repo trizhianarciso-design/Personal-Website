@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Goals as a Student</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Trizhia's' Website</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">ABOUT</a>
+        <div class="dropdown-content">
+          <a href="skills.html">Skills I'm Developing</a>
+          <a href="goals.html">My Goals as a Student</a>
+          <a href="funfacts.html">Fun Facts About Me</a>
+        </div>
+      </li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a>
+    </ul>
+  </nav>
+  <section id="section2"></section>
+<section id="drop">
+  <h2>My Goals as a Student</h2>
+  <p>Here are the things I’m actually working toward. (Tap a card to read more.)</p>
+  
+  <div class="goal-grid">
+    <div class="goal-card" onclick="toggleGoalDetails(1)">
+      <div class="goal-header" style="background-color:#ff5fa8;">Short-Term Goals</div>
+      <p><strong>Finish college on time and level up my IT skills.</strong></p>
+      <div class="goal-details" id="goal1-details">
+        <p>I want to graduate on time without delays. At the same time, I’m focused on improving my web development, coding, and overall IT skills so I become job-ready as soon as possible.</p>
+      </div>
+    </div>
+
+    <div class="goal-card" onclick="toggleGoalDetails(2)">
+      <div class="goal-header" style="background-color:#4db8ff;">Career Goals</div>
+      <p><strong>Land a good job after graduation.</strong></p>
+      <div class="goal-details" id="goal2-details">
+        <p>My main goal is to find a stable job in IT or web development. I want to start earning so I can support myself and help provide for my family.</p>
+      </div>
+    </div>
+
+    <div class="goal-card" onclick="toggleGoalDetails(3)">
+      <div class="goal-header" style="background-color:#7ed957;">Financial Goals</div>
+      <p><strong>Earn, save, invest, and buy the things I want.</strong></p>
+      <div class="goal-details" id="goal3-details">
+        <p>I want to make enough money to buy the things I’ve always wanted, help my family, start investing early, and slowly build wealth. Getting rich is the long-term dream, but it starts with smart money habits now.</p>
+      </div>
+    </div>
+
+    <div class="goal-card" onclick="toggleGoalDetails(4)">
+      <div class="goal-header" style="background-color:#ff9a3d;">Personal Goals</div>
+      <p><strong>Grow as a person while chasing success.</strong></p>
+      <div class="goal-details" id="goal4-details">
+        <p>I want to become more disciplined, improve my skills continuously, and build a life where I can enjoy the things I love — while still working hard for my future and my family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  <footer>
+    <p>&copy; 2026 Trizhia Narciso. All rights reserved.</p>
+  </footer>
+  <div class="footer-divider"></div> <!-- Gradient line -->
+  <script>
+function confirmLogout() {
+  if (confirm("Are you sure you want to log out?")) {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'login.html';
+  }
+}
+</script>
+<script>
+function toggleGoalDetails(n) {
+  document.getElementById('goal' + n + '-details').classList.toggle('active');
+}
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Personal Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Trizhia's' Website</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">ABOUT</a>
+        <div class="dropdown-content">
+          <a href="skills.html">Skills I'm Developing</a>
+          <a href="goals.html">My Goals as a Student</a>
+          <a href="funfacts.html">Fun Facts About Me</a>
+        </div>
+      </li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a>
+    </ul>
+  </nav>
+  <section id="section2"></section>
+<div class="slider">
+    <div class="slides">
+      <div class="slide"><img src="blossom.jpg" alt="Image 1"><div class="text-overlay"><h1>Welcome to Trizhia's Website!</h1></div></div>
+      <div class="slide"><img src="bubbles.jpg" alt="Image 2"><div class="text-overlay"><h1>Enjoy!</h1></div></div>
+      <div class="slide"><img src="buttercup.jpg" alt="Image 3"><div class="text-overlay"><h1>Have fun!</h1></div></div>
+    </div>
+  </div>
+  <section id="drop">
+    <h2>Fun Facts About Me</h2>
+<p>A few things that don’t usually fit on a resume — the interests, habits, and small details that make me who I am.</p>
+
+<div class="funfact-container">
+  <div class="funfact-card">
+    <div class="funfact-inner">
+      <div class="funfact-front"><p>Professional Napper</p></div>
+      <div class="funfact-back"><p>I can fall asleep in under 5 minutes… anywhere. Library chairs, buses, even during group calls (oops).</p></div>
+    </div>
+  </div>
+
+  <div class="funfact-card">
+    <div class="funfact-inner">
+      <div class="funfact-front"><p>Foodie Mode: ON</p></div>
+      <div class="funfact-back"><p>I plan my day around meals. If you ask me what I’m doing later, the answer is usually “eating something good.”</p></div>
+    </div>
+  </div>
+
+  <div class="funfact-card">
+    <div class="funfact-inner">
+      <div class="funfact-front"><p>Certified Sulky</p></div>
+      <div class="funfact-back"><p>When I’m in a bad mood, I go full silent mode… then suddenly start ranting about the pettiest things.</p></div>
+    </div>
+  </div>
+
+  <div class="funfact-card">
+    <div class="funfact-inner">
+      <div class="funfact-front"><p>Chaos Creator</p></div>
+      <div class="funfact-back"><p>I make the most random jokes at the worst timing. Half the time even I don’t know why I said it.</p></div>
+    </div>
+  </div>
+</div>
+    <div class="see-more-container">
+      <a href="funfacts.html" class="see-more-button">See More Funfacts</a>
+    </div>
+  </section>
+  <div class="container">
+    <div class="image-section"><img src="green.png" alt="Ton's Image"></div>
+    <div class="quote-section">
+      <h1>Hi, I'm Trizhia!</h1>
+      <p>I'm currently studying Information Technology with a focus on web development. I enjoy creating websites and learning new design tools. In my free time, I also practice public speaking and work on personal projects.</p>
+      <blockquote>"The best way to predict the future is to invent it."</blockquote>  </div>
+  </div>
+  <footer>
+    <p>&copy; 2026 Trizhia Narciso. All rights reserved.</p>
+  </footer>
+  <div class="footer-divider"></div> <!-- Gradient line -->
+  <script>
+function confirmLogout() {
+  if (confirm("Are you sure you want to log out?")) {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'login.html';
+  }
+}
+</script>
+<script>
+  const slides = document.querySelector('.slides');
+  let index = 0;
+  function showNextSlide() {
+    index = (index + 1) % 3;
+    slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+  }
+  setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

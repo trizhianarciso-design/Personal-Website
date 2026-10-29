@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Personal Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-background">
+  <header>
+    <h1>Welcome to Trizhia's' Website</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">ABOUT</a>
+        <div class="dropdown-content">
+          <a href="skills.html">Skills I'm Developing</a>
+          <a href="goals.html">My Goals as a Student</a>
+          <a href="funfacts.html">Fun Facts About Me</a>
+        </div>
+      </li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a>
+    </ul>
+  </nav>
+  <section id="section2"></section>
+<section id="contact">
+    <div class="contact-content">
+      <form id="contactForm" class="contact-form" novalidate>
+        <h2>Let's Get in Touch</h2>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+        <span class="error" id="nameError"></span>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email">
+        <span class="error" id="emailError"></span>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message"></textarea>
+        <span class="error" id="messageError"></span>
+        <button type="submit">SEND MESSAGE</button>
+      </form>
+      <div class="contact-details">
+        <h3><center>Contact Me</center></h3>
+        <p><strong>Email Address:</strong> <br> trizhianarciso@gmail.com</p>
+        <hr width="75%" size="1" color="#ff5fa8" align="left">
+        <p><strong>Phone Number:</strong> <br>0949 428 7517</p>
+        <hr width="75%" size="1" color="#ff5fa8" align="left">
+        <p><strong>Address:</strong> <br> Barbaza, Antique, Philippines</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2026 Trizhia Narciso. All rights reserved.</p>
+  </footer>
+  <div class="footer-divider"></div> <!-- Gradient line -->
+  <script>
+function confirmLogout() {
+  if (confirm("Are you sure you want to log out?")) {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'login.html';
+  }
+}
+</script>
+<script>
+const form = document.querySelector("#contactForm");
+function validateEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).toLowerCase()); }
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  let isValid = true;
+  document.querySelectorAll(".error").forEach(function(el) { el.textContent = ""; });
+  if (document.getElementById('name').value.trim() === "") { document.getElementById('nameError').textContent = "Name is required"; isValid = false; }
+  if (document.getElementById('email').value.trim() === "") { document.getElementById('emailError').textContent = "Email is required"; isValid = false; }
+  else if (!validateEmail(document.getElementById('email').value.trim())) { document.getElementById('emailError').textContent = "Please enter a valid email"; isValid = false; }
+  if (document.getElementById('message').value.trim() === "") { document.getElementById('messageError').textContent = "Message is required"; isValid = false; }
+  if (!isValid) return;
+  alert("Your message has been sent successfully!");
+  form.reset();
+});
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

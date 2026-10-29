@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills I'm Developing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Trizhia's Website</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">ABOUT</a>
+        <div class="dropdown-content">
+          <a href="skills.html">Skills I'm Developing</a>
+          <a href="goals.html">My Goals as a Student</a>
+          <a href="funfacts.html">Fun Facts About Me</a>
+        </div>
+      </li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a>
+    </ul>
+  </nav>
+  <section id="section2"></section>
+<section id="drop">
+    <h2>Skills I'm Developing</h2>
+<p>As a student, I’m focusing on practical skills that will help me succeed in school, work, and life beyond graduation.</p>
+<section id="skills">
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Digital')">Digital & Technical Skills</button>
+    <button class="tablinks" onclick="openTab(event, 'Communication')">Communication & Collaboration</button>
+    <button class="tablinks" onclick="openTab(event, 'SelfManagement')">Self-Management</button>
+    <button class="tablinks" onclick="openTab(event, 'ProblemSolving')">Problem-Solving & Critical Thinking</button>
+  </div>
+  <div id="Digital" class="tabcontent">
+    <h3>Digital & Technical Skills</h3>
+    <ul>
+      <li>Using productivity tools effectively (Google Workspace, Microsoft 365, Notion, etc.)</li>
+      <li>Learning the basics of data analysis and spreadsheets (Excel / Google Sheets)</li>
+      <li>Building digital literacy: researching reliably, evaluating sources, and protecting personal data</li>
+    </ul>
+  </div>
+  <div id="Communication" class="tabcontent" style="display:none;">
+    <h3>Communication & Collaboration</h3>
+    <ul>
+      <li>Writing clearly and professionally (emails, reports, and presentations)</li>
+      <li>Speaking confidently in group discussions, presentations, and interviews</li>
+      <li>Working effectively in teams — giving and receiving feedback, managing shared responsibilities</li>
+    </ul>
+  </div>
+  <div id="SelfManagement" class="tabcontent" style="display:none;">
+    <h3>Self-Management</h3>
+    <ul>
+      <li>Time management and prioritization (planning, avoiding procrastination, meeting deadlines)</li>
+      <li>Building consistent study and work habits</li>
+      <li>Managing stress, maintaining focus, and taking care of mental and physical well-being</li>
+    </ul>
+  </div>
+  <div id="ProblemSolving" class="tabcontent" style="display:none;">
+    <h3>Problem-Solving & Critical Thinking</h3>
+    <ul>
+      <li>Breaking down complex problems into smaller, manageable steps</li>
+      <li>Evaluating information carefully and making reasoned decisions</li>
+      <li>Adapting when plans change and finding practical solutions under pressure</li>
+    </ul>
+  </div>
+    </section>
+  </section>
+  <footer>
+    <p>&copy; 2026 Trizhia Narciso. All rights reserved.</p>
+  </footer>
+  <div class="footer-divider"></div> <!-- Gradient line -->
+  <script>
+function confirmLogout() {
+  if (confirm("Are you sure you want to log out?")) {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'login.html';
+  }
+}
+</script>
+<script>
+function openTab(evt, tabName) {
+  const tabcontents = document.getElementsByClassName("tabcontent");
+  for (let i = 0; i < tabcontents.length; i++) tabcontents[i].style.display = "none";
+  const tablinks = document.getElementsByClassName("tablinks");
+  for (let i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector('.tablinks').click(); // show the first tab
+});
+</script>
+  <script src="script.js"></script>
+</body>
+</html>
